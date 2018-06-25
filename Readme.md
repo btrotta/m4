@@ -118,14 +118,14 @@ The inner layers of each neural network use the relu (rectified linear) activati
 
 ## Yearly
 
-Training periods: [10, 20, 30]
-NN structure:
+Training periods: [10, 20, 30]  
+NN structure:  
 * 2 dense hidden layers of 50 relu units feeding into linear output cell.
 
 ## Quarterly
 
-Training periods: [20, 48, 100]
-NN structure:
+Training periods: [20, 48, 100]  
+NN structure:  
 * Yearly averages feeding into a 2 successive densely connected hidden layers of 50
 relu units then a single linear output cell representing the yearly average forecast.
 * Quarterly differences from the yearly average are run through a trainable convolution
@@ -138,8 +138,8 @@ output.
 
 ## Monthly
 
-Training periods: [48, 120 (= 12 * 10), 240 (= 12 * 20)]
-NN structure
+Training periods: [48, 120 (= 12 * 10), 240 (= 12 * 20)]  
+NN structure:  
 * Yearly averages feeding into 2 successive densely connected hidden layers of 20
 relu units then a single linear output cell representing the yearly average forecast.
 * Monthly differences from the yearly average are run through a trainable convolution
@@ -152,11 +152,12 @@ output.
 
 ## Weekly
 
-Training periods: [52, 520 (= 52 * 10), 1040 (= 52 * 20)]
-NN structure for training length 52:
+Training periods: [52, 520 (= 52 * 10), 1040 (= 52 * 20)]  
+NN structure for training length 52:  
 * Weekly inputs fed into 2 successive densely connected hidden relu layers of 20 relu
 units, then a single linear output cell.
-NN structure for training lengths > 52:
+
+NN structure for training lengths > 52:  
 * Yearly averages feeding into 2 successive densely connected hidden relu layers of
 20 relu units then a single linear output cell representing the yearly average forecast.
 * Weekly differences from the yearly average are run through a trainable convolution
@@ -168,8 +169,8 @@ output.
 
 ## Daily
 
-Training periods: [98 (= 14 * 7)]
-NN structure:
+Training periods: [98 (= 14 * 7)]  
+NN structure:  
 * Weekly averages feeding into 2 successive densely connected hidden relu layers of
 20 relu units then a single linear output cell representing the yearly average forecast.
 * Daily differences from the weekly average are run through a trainable convolution
@@ -185,8 +186,8 @@ caused by some problematic series having very large step changes.
 
 ## Hourly
 
-Training periods: [672 (= 96 * 7 * 24)]
-NN structure:
+Training periods: [672 (= 96 * 7 * 24)]  
+NN structure:  
 * Weekly averages feeding into 2 successive densely connected hidden relu layers of
 20 relu units then a single linear output cell representing the weekly average
 forecast.
